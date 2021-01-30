@@ -3,6 +3,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const fetch = require('node-fetch');
 const cron = require('node-cron');
 
+//for heroku deployments only, it cause an error if you don't include a http listener
 const express = require('express');
 const app = express();
 
