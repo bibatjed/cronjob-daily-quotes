@@ -3,6 +3,9 @@ const TelegramBot = require('node-telegram-bot-api');
 const fetch = require('node-fetch');
 const cron = require('node-cron');
 
+const express = require('express');
+const app = express();
+
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
 const quotesEndpoint = 'https://type.fit/api/quotes';
@@ -29,5 +32,7 @@ const sendTelegramBot = async () => {
         console.log(e);
     }
 };
+
+app.listen(process.env.PORT || 5000);
 
 sendTelegramBot();
