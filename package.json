@@ -13,5 +13,8 @@
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.1",
     "node-telegram-bot-api": "^0.51.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
