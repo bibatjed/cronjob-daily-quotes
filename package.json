@@ -1,0 +1,17 @@
+{
+  "name": "cronjob-telegram-daily-quotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jed",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.1",
+    "node-telegram-bot-api": "^0.51.0"
+  }
+}
