@@ -15,7 +15,7 @@ Install dependecies
 npm install
 ```
 
-Create a telegram bot using botfather, you can refer to this docs on how to create a bot in telegram.
+Create a telegram bot using botfather, you can refer to this doc on how to create a bot in telegram.
 ```
 https://core.telegram.org/bots
 ```
