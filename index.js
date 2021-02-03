@@ -34,6 +34,8 @@ const sendTelegramBot = async () => {
     }
 };
 
+app.all('/healthcheck', (req, res) => res.send('Cronjob is working'))
+
 app.listen(process.env.PORT || 5000);
 
 sendTelegramBot();
