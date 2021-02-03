@@ -27,3 +27,6 @@ https://core.telegram.org/bots
 TELEGRAM_BOT_TOKEN=<telegram_bot_token> //after creating a bot in telegram
 TELEGRAM_CHAT_ID=<telegram_chat_id>    //after creating a bot in telegram
 ```
+
+## Demo
+![Screenshot](demo.png)
