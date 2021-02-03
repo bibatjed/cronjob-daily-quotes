@@ -9,9 +9,9 @@
   "author": "jed",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.8.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "node-cron": "^2.0.3",
     "node-fetch": "^2.6.1",
     "node-telegram-bot-api": "^0.51.0"
   },

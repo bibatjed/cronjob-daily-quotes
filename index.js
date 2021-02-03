@@ -1,7 +1,7 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const fetch = require('node-fetch');
-const cron = require('node-cron');
+const CronJob = require('cron').CronJob;
 
 //for heroku deployments only, it cause an error if you don't include a http listener
 const express = require('express');
@@ -16,7 +16,7 @@ const sendTelegramBot = async () => {
         const fetchQuotes = await fetch(quotesEndpoint);
         const jsonQuotes = await fetchQuotes.json();
 
-        cron.schedule('* * * * *', async function () {
+        const job = new CronJob('0 6 * * *', async () => {
             const randomNumber = Math.floor(Math.random() * jsonQuotes.length);
             const pickedQuote = jsonQuotes[randomNumber];
             const textToBeSent = `${pickedQuote.text} - ${
@@ -27,13 +27,15 @@ const sendTelegramBot = async () => {
 
             await bot.sendMessage(chatId, textToBeSent);
             console.log('Telegram Message Sent!');
-        });
+        }, null, true, 'Asia/Singapore');
 
+        job.start();
     } catch (e) {
         console.log(e);
     }
 };
 
+//to make dynos alive in heroku
 app.all('/healthcheck', (req, res) => res.send('Cronjob is working'))
 
 app.listen(process.env.PORT || 5000);
